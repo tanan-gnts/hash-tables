@@ -1,48 +1,25 @@
-class Stack {
-  final List<int> _data = [];
-
-  bool get isEmpty => _data.isEmpty;
-
-  int? peek() {
-    if (!isEmpty) {
-      return _data.last;
-    } else {
-      return null;
-    }
-  }
-
-  void push(int value) {
-    _data.add(value);
-  }
-
-  int? pop() {
-    if (isEmpty) return null;
-    return _data.removeLast();
-  }
-
-  @override
-  String toString() {
-    final result = StringBuffer();
-    result.writeln('Top');
-    result.writeln('____');
-    for (int i = _data.length - 1; i >= 0; i--) {
-      result.writeln(_data[i]);
-    }
-    result.writeln('____');
-    return result.toString();
-  }
-}
-
 void main() {
-  final myStack = Stack();
-  myStack.push(42);
-  myStack.push(3);
-  myStack.push(10);
-  print(myStack);
+  // Create a simple hashtable (Map)
+  Map<String, int> scores = {
+    "Alice": 90,
+    "Bob": 85,
+    "Charlie": 95
+  };
 
-  //myStack.peek(); // 10
+  // Access a value by key
+  print("Alice's score: ${scores["Alice"]}");
 
-  //print(myStack.pop()); // 10
-  //print(myStack.pop()); // 3
-  //print(myStack.pop()); // 42
+  // Add a new entry
+  scores["David"] = 80;
+
+  // Update a value
+  scores["Bob"] = 88;
+
+  // Remove an entry
+  scores.remove("Charlie");
+
+  // Iterate through the map
+  scores.forEach((key, value) {
+    print("$key: $value");
+  });
 }
