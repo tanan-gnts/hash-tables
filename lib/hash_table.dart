@@ -15,7 +15,7 @@ class Student {
   }
 
 class HashTable {
-  final _bucket = List<List<Student>>.generate(100, [_] => []);
+  final _bucket = List<List<Student>>.generate(100, (_) => []);
  
   void insert(Student student) {
     final index = _hash(student.id);
