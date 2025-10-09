@@ -1,5 +1,6 @@
 import 'package:hashtables/hash_table.dart';
 import 'package:hashtables/linear_search.dart';
+import 'package:hashtables/binary_search.dart';
 
 void main() {
   final myList = [42, 3, 10, 7, 28, 149, 0, 3, 25, 7, 1];
@@ -26,10 +27,6 @@ students.insert(Student(2023096, 'TA'));
 students.insert(Student(2022007, 'UM'));
 students.insert(Student(2024007, 'VG'));
 
- var studentList;
- final studentName = studentSearch(studentList, 2024008);
- print(studentName);
-}
-
-studentSearch(studentList, int i) {
+final student = students.getStudent(2024008);
+ print(student);
 }
